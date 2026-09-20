@@ -588,10 +588,19 @@ fn format_number(value: u64) -> String {
     out
 }
 
+fn app_icon() -> Arc<egui::IconData> {
+    Arc::new(egui::IconData {
+        rgba: include_bytes!("../assets/icon.rgba").to_vec(),
+        width: 64,
+        height: 64,
+    })
+}
+
 fn main() -> eframe::Result {
     let options = eframe::NativeOptions {
         viewport: egui::ViewportBuilder::default()
             .with_title("EmberClick")
+            .with_icon(app_icon())
             .with_inner_size([760.0, 590.0])
             .with_min_inner_size([700.0, 540.0])
             .with_resizable(true),

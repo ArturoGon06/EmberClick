@@ -1,3 +1,4 @@
 /target/
 /EmberClick.exe
 *.pdb
+*.res
